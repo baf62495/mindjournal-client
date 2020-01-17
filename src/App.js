@@ -1,18 +1,18 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import './App.css';
 
 import LandingPage from './components/LandingPage';
+import LogsMainPage from './components/LogsMainPage';
+import ReflectionsMainPage from './components/ReflectionsMainPage';
 
 class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        <Switch>
-        <Route exact path='/' render={rprops => (
-          <LandingPage {...rprops} />
-        )} />
-        </Switch>
+        <Route exact path='/' component={LandingPage}/>
+        <Route path='/logs' component={LogsMainPage}/>
+        <Route path='/reflections' component={ReflectionsMainPage}/>
       </div>
     );
   }
