@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function LandingPage() {
+export default function LandingPage(props) {
     return (
         <main className='landing-page'>
             <nav className='landing-nav'>
@@ -9,7 +9,7 @@ export default function LandingPage() {
             <div className='landing-container'>
                 <h1>All-in-one Journal for Individuals</h1>
                 <p>Enjoy a healthy, mindful, and balanced life</p>
-                <button>Enter</button>
+                <button onClick={e => props.history.push('/logs')}>Enter</button>
             </div>
         </main>
     )

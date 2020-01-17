@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
 import LandingPage from './components/LandingPage';
@@ -8,7 +8,11 @@ class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        <Route exact path='/' component={LandingPage} />
+        <Switch>
+        <Route exact path='/' render={rprops => (
+          <LandingPage {...rprops} />
+        )} />
+        </Switch>
       </div>
     );
   }
