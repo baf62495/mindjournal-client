@@ -7,6 +7,7 @@ export default class LogsList extends React.Component {
             .map((log, key) => <LogItem {...log} key={key} />);
         return (
             <div className='mj-card-list'>
+                <div className='mj-card-list-title'>Recent Logs</div>
                 {list}
             </div>
         )
