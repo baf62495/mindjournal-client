@@ -9,11 +9,11 @@ import ReflectionsMainPage from './components/ReflectionsMainPage';
 class App extends React.Component {
   render() {
     return (
-      <div className='App'>
+      <>
         <Route exact path='/' component={LandingPage}/>
         <Route path='/logs' component={LogsMainPage}/>
         <Route path='/reflections' component={ReflectionsMainPage}/>
-      </div>
+      </>
     );
   }
 }
