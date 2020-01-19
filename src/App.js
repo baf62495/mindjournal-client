@@ -10,12 +10,17 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Route exact path='/' component={LandingPage}/>
-        <Route path='/logs' component={LogsMainPage}/>
-        <Route path='/reflections' component={ReflectionsMainPage}/>
+      <Route exact path='/' component={LandingPage}/>
+      <Route
+        path='/logs'
+        render={rprops => (
+          <LogsMainPage {...rprops} logs={this.props.logs} />
+        )}
+      />
+      <Route path='/reflections' component={ReflectionsMainPage}/>
       </>
-    );
-  }
+      );
+    }
 }
 
 export default App;
