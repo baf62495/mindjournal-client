@@ -20,8 +20,8 @@ export default function LogItem(props) {
         <div className='mj-card'>
             <header>
                 <ul className='mj-card-meta'>
-                    <li>{props.created_at}</li>
                     <li><FontAwesomeIcon icon={icons[props.mood]} /></li>
+                    <li>{props.created_at}</li>
                     <li>{props.mood}</li>
                 </ul>
             </header>
