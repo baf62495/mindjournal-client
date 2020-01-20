@@ -8,7 +8,7 @@ export default function LogsForm(props) {
                     <textarea type='text' name='content' id='content' placeholder='What is positive or exciting about your day?' maxLength='200'></textarea>
                 </label>
                 <label htmlFor='mood'>Mood:</label>
-                <select name='mood' defaultValue='neutral'>
+                <select name='mood' defaultValue='Neutral'>
                     <option value='Sad'>Sad</option>
                     <option value='Angry'>Angry</option>
                     <option value='Neutral'>Neutral</option>
