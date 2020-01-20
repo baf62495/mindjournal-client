@@ -32,6 +32,14 @@ export default class LogsMainPage extends React.Component {
         })
     }
 
+    deleteLog = (e, id) => {
+        e.preventDefault()
+        
+        let logs = this.state.logs.filter(log => log.id !== id)
+        console.log('DELETE', logs)
+        this.setState({ logs })
+    }
+
     render() {
         return (
             <>
@@ -47,7 +55,7 @@ export default class LogsMainPage extends React.Component {
                                 <p className='description'>Capture your ideas, feelings and thoughts</p>
                             </header>
                             <LogsForm createLog={this.createLog} />
-                            <LogsList logs={this.state.logs} />
+                            <LogsList logs={this.state.logs} deleteLog={this.deleteLog} />
                         </div>
                     </div>
                 </div>

@@ -27,6 +27,7 @@ export default function LogItem(props) {
                 </ul>
             </header>
             <p>{props.content}</p>
+            <button title='delete' onClick={e => props.deleteLog(e, props.id)}>Delete</button>
         </div>
     )
 }
