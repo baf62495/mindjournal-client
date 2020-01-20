@@ -17,7 +17,12 @@ class App extends React.Component {
           <LogsMainPage {...rprops} logs={this.props.logs} />
         )}
       />
-      <Route path='/reflections' component={ReflectionsMainPage}/>
+      <Route
+        path='/reflections'
+        render={rprops => (
+          <ReflectionsMainPage {...rprops} reflections={this.props.reflections} />
+        )}
+      />
       </>
       );
     }
