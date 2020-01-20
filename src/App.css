@@ -91,6 +91,10 @@ p {
     padding: 40px;
 }
 
+.mj-page-content-header {
+    margin-bottom: 40px;
+}
+
 .app-navigation {
     width: 215px;
     position: fixed;
@@ -247,4 +251,14 @@ p {
 
 .mj-card-meta > li:first-child {
     margin-left: 0;
+}
+
+.mj-card-form {
+    min-height: 191px;
+  }
+  
+.mj-card-form textarea {
+    width: 100%;
+    resize: none;
+    height: 80px;
 }
