@@ -1,5 +1,5 @@
 import React from 'react';
-import AppHeader from './AppHeader';
+import ReflectionItemPageHeader from './ReflectionItemPageHeader';
 
 export default function ReflectionItemPage(props) {
     const reflection = props.reflections.find(r =>
@@ -9,6 +9,7 @@ export default function ReflectionItemPage(props) {
     return (
         <>
         <main>
+            <ReflectionItemPageHeader history={props.history} />
             <div className='mj-page'>
                 <div className='mj-page-content'>
                     <div className='wrapper'>
