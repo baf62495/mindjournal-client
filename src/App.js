@@ -5,6 +5,7 @@ import './App.css';
 import LandingPage from './components/LandingPage';
 import LogsMainPage from './components/LogsMainPage';
 import ReflectionsMainPage from './components/ReflectionsMainPage';
+import ReflectionItemPage from './components/ReflectionItemPage';
 
 class App extends React.Component {
   render() {
@@ -18,9 +19,15 @@ class App extends React.Component {
         )}
       />
       <Route
-        path='/reflections'
+        exact path='/reflections'
         render={rprops => (
           <ReflectionsMainPage {...rprops} reflections={this.props.reflections} />
+        )}
+      />
+      <Route
+        exact path='/reflections/:id'
+        render={rprops => (
+          <ReflectionItemPage {...rprops} reflections={this.props.reflections} />
         )}
       />
       </>
