@@ -8,7 +8,6 @@ export default function ReflectionItemPageHeader(props) {
             <div className='header-left'>
                 <button className='js-btn-back' onClick={e => props.history.push('/reflections')}><FontAwesomeIcon icon={faArrowLeft}/></button>
             </div>
-            {console.log(props.history)}
         </header>
     )
 }
