@@ -8,12 +8,12 @@ import {
 export default function AppHeader(props) {
     return (
         <header className='app-header'>
-            <div className="header-left">
-                <button className="js-btn-menu"><FontAwesomeIcon icon={faBars}/></button>
+            <div className='header-left'>
+                <button className='js-btn-menu'><FontAwesomeIcon icon={faBars}/></button>
             </div>
-            <div className="header-center">{props.title}</div>
-            <div className="header-right">
-                <button className="js-btn-filter"><FontAwesomeIcon icon={faFilter}/></button>
+            <div className='header-center'>{props.title}</div>
+            <div className='header-right'>
+                <button className='js-btn-filter'><FontAwesomeIcon icon={faFilter}/></button>
             </div>
         </header>
     )
