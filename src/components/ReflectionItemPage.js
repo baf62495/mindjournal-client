@@ -1,5 +1,6 @@
 import React from 'react';
 import ReflectionItemPageHeader from './ReflectionItemPageHeader';
+import ReflectionItemPageFooter from './ReflectionItemPageFooter';
 
 export default function ReflectionItemPage(props) {
     const reflection = props.reflections.find(r =>
@@ -18,6 +19,7 @@ export default function ReflectionItemPage(props) {
                     </div>
                 </div>
             </div>
+            <ReflectionItemPageFooter history={props.history} />
         </main>
         </>
     )

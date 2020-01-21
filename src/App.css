@@ -266,3 +266,21 @@ p {
 .mj-refl {
     padding: 25px 0 10px;
 }
+
+.refl-footer {
+    width: 100%;
+    border-top: 1px solid gray;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.refl-footer > .wrapper {
+    height: var(--appHeaderHeight);
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
