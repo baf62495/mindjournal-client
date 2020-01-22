@@ -7,39 +7,6 @@ import LogsList from './LogsList';
 import LogsForm from './LogsForm';
 
 export default class LogsMainPage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            logs: this.props.logs
-        }
-    }
-
-    createLog = e => {
-        e.preventDefault()
-        console.log('LogForm submitted!')
-
-        let newLog = {
-            content: e.target.content.value,
-            mood: e.target.mood.value,
-            created_at: new Date().toISOString()
-        }
-
-        this.setState({
-            logs: [
-                ...this.state.logs,
-                newLog
-            ]
-        })
-    }
-
-    deleteLog = (e, id) => {
-        e.preventDefault()
-        
-        let logs = this.state.logs.filter(log => log.id !== id)
-        console.log('DELETE', logs)
-        this.setState({ logs })
-    }
-
     render() {
         return (
             <>
@@ -55,7 +22,7 @@ export default class LogsMainPage extends React.Component {
                                 <p className='description'>Capture your ideas, feelings and thoughts</p>
                             </header>
                             <LogsForm createLog={this.createLog} />
-                            <LogsList logs={this.state.logs} deleteLog={this.deleteLog} />
+                            <LogsList logs={this.props.logs} deleteLog={this.props.deleteLog} />
                         </div>
                     </div>
                 </div>
