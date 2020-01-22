@@ -14,7 +14,8 @@ class App extends React.Component {
     super(props);
     this.state = {
         logs: this.props.logs,
-        reflections: this.props.reflections
+        reflections: this.props.reflections,
+        searchTerm: ''
     }
   }
 
@@ -71,6 +72,13 @@ class App extends React.Component {
     this.setState({ reflections })
   }
 
+  updateSearchTerm = term => {
+    console.log('searching for:', term)
+    this.setState({
+      searchTerm: term
+    })
+  }
+
   render() {
     return (
       <>
@@ -83,6 +91,8 @@ class App extends React.Component {
             logs={this.state.logs}
             createLog={this.createLog}
             deleteLog={this.deleteLog}
+            searchTerm={this.state.searchTerm}
+            updateSearchTerm={this.updateSearchTerm}
           />
         )}
       />

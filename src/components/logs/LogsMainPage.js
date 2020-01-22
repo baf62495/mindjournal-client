@@ -12,7 +12,7 @@ export default class LogsMainPage extends React.Component {
             <>
             <AppNavigation />
             <main>
-                <AppSidebar />
+                <AppSidebar searchTerm={this.props.searchTerm} updateSearchTerm={this.props.updateSearchTerm} />
                 <AppHeader title='Logs' />
                 <div className='mj-page'>
                     <div className='mj-page-content'>
@@ -22,7 +22,7 @@ export default class LogsMainPage extends React.Component {
                                 <p className='description'>Capture your ideas, feelings and thoughts</p>
                             </header>
                             <LogsForm createLog={this.props.createLog} />
-                            <LogsList logs={this.props.logs} deleteLog={this.props.deleteLog} />
+                            <LogsList logs={this.props.logs} deleteLog={this.props.deleteLog} searchTerm={this.props.searchTerm} />
                         </div>
                     </div>
                 </div>
