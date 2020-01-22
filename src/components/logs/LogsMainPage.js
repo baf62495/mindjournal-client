@@ -1,26 +1,28 @@
 import React from 'react';
 
-import AppNavigation from './AppNavigation';
-import AppSidebar from './AppSidebar';
-import AppHeader from './AppHeader';
-import ReflectionsList from './ReflectionsList';
+import AppNavigation from '../AppNavigation';
+import AppSidebar from '../AppSidebar';
+import AppHeader from '../AppHeader';
+import LogsList from './LogsList';
+import LogsForm from './LogsForm';
 
-export default class ReflectionsMainPage extends React.Component {
+export default class LogsMainPage extends React.Component {
     render() {
         return (
             <>
             <AppNavigation />
             <main>
                 <AppSidebar />
-                <AppHeader title='Reflections' />
+                <AppHeader title='Logs' />
                 <div className='mj-page'>
                     <div className='mj-page-content'>
-                        <div className="wrapper">
+                        <div className='wrapper'>
                             <header className='mj-page-content-header'>
-                                <h1>Your Reflections</h1>
+                                <h1>Your Logs</h1>
                                 <p className='description'>Capture your ideas, feelings and thoughts</p>
-                                <ReflectionsList reflections={this.props.reflections} />
                             </header>
+                            <LogsForm createLog={this.props.createLog} />
+                            <LogsList logs={this.props.logs} deleteLog={this.props.deleteLog} />
                         </div>
                     </div>
                 </div>

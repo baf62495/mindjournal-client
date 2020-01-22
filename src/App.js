@@ -3,9 +3,9 @@ import { Route } from 'react-router-dom';
 import './App.css';
 
 import LandingPage from './components/LandingPage';
-import LogsMainPage from './components/LogsMainPage';
-import ReflectionsMainPage from './components/ReflectionsMainPage';
-import ReflectionItemPage from './components/ReflectionItemPage';
+import LogsMainPage from './components/logs/LogsMainPage';
+import ReflectionsMainPage from './components/reflections/ReflectionsMainPage';
+import ReflectionItemPage from './components/reflections/ReflectionItemPage';
 
 class App extends React.Component {
   constructor(props) {
