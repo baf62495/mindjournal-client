@@ -1,11 +1,13 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
+import uuid from 'react-uuid';
 
 import LandingPage from './components/LandingPage';
 import LogsMainPage from './components/logs/LogsMainPage';
 import ReflectionsMainPage from './components/reflections/ReflectionsMainPage';
 import ReflectionItemPage from './components/reflections/ReflectionItemPage';
+import ReflectionsFormPage from './components/reflections/ReflectionsFormPage';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,17 +23,36 @@ class App extends React.Component {
     console.log('LogForm submitted!')
 
     let newLog = {
-        content: e.target.content.value,
-        mood: e.target.mood.value,
-        created_at: new Date().toISOString()
+      content: e.target.content.value,
+      mood: e.target.mood.value,
+      created_at: new Date().toISOString()
     }
 
     this.setState({
-        logs: [
-            ...this.state.logs,
-            newLog
-        ]
+      logs: [
+          ...this.state.logs,
+          newLog
+      ]
     })
+  }
+  
+  createReflection = e => {
+    e.preventDefault()
+
+    const newReflection = {
+      id: uuid(),
+      title: e.target.title.value,
+      content: e.target.content.value,
+      last_edited: new Date().toISOString()
+    }
+
+    this.setState({
+      reflections: [
+        ...this.state.reflections,
+        newReflection
+      ]
+    })
+    console.log(newReflection)
   }
 
   deleteLog = (e, id) => {
@@ -72,9 +93,15 @@ class App extends React.Component {
         )}
       />
       <Route
-        exact path='/reflections/:id'
+        path='/reflections/edit/:id'
         render={rprops => (
           <ReflectionItemPage {...rprops} reflections={this.state.reflections} deleteReflection={this.deleteReflection} />
+        )}
+      />
+      <Route
+        exact path='/reflections/add'
+        render={rprops => (
+          <ReflectionsFormPage {...rprops} createReflection={this.createReflection} />
         )}
       />
       </>

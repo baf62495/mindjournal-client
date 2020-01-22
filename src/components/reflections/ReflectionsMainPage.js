@@ -19,6 +19,7 @@ export default class ReflectionsMainPage extends React.Component {
                             <header className='mj-page-content-header'>
                                 <h1>Your Reflections</h1>
                                 <p className='description'>Capture your ideas, feelings and thoughts</p>
+                                <button onClick={e => this.props.history.push('/reflections/add')}>+ Add Reflection</button>
                                 <ReflectionsList reflections={this.props.reflections} />
                             </header>
                         </div>

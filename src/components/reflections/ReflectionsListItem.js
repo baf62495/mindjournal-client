@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function ReflectionListItem(props) {
     return (
         <div className='mj-refl'>
-            <Link to={`/reflections/${props.id}`}>{props.title}</Link>
+            <Link to={`/reflections/edit/${props.id}`}>{props.title}</Link>
             <p>
                 {`${props.content.substring(0, 160)}...`}
             </p>
