@@ -11,7 +11,7 @@ export default class ReflectionsMainPage extends React.Component {
             <>
             <AppNavigation />
             <main>
-                <AppSidebar />
+                <AppSidebar searchTerm={this.props.searchTerm} updateSearchTerm={this.props.updateSearchTerm} />
                 <AppHeader title='Reflections' />
                 <div className='mj-page'>
                     <div className='mj-page-content'>
@@ -20,7 +20,7 @@ export default class ReflectionsMainPage extends React.Component {
                                 <h1>Your Reflections</h1>
                                 <p className='description'>Capture your ideas, feelings and thoughts</p>
                                 <button onClick={e => this.props.history.push('/reflections/add')}>+ Add Reflection</button>
-                                <ReflectionsList reflections={this.props.reflections} />
+                                <ReflectionsList reflections={this.props.reflections} searchTerm={this.props.searchTerm} updateSearchTerm={this.props.updateSearchTerm} />
                             </header>
                         </div>
                     </div>

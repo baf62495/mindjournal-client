@@ -99,7 +99,12 @@ class App extends React.Component {
       <Route
         exact path='/reflections'
         render={rprops => (
-          <ReflectionsMainPage {...rprops} reflections={this.state.reflections} />
+          <ReflectionsMainPage
+            {...rprops}
+            reflections={this.state.reflections}
+            searchTerm={this.state.searchTerm}
+            updateSearchTerm={this.updateSearchTerm}
+          />
         )}
       />
       <Route
