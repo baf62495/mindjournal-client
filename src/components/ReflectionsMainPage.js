@@ -6,13 +6,6 @@ import AppHeader from './AppHeader';
 import ReflectionsList from './ReflectionsList';
 
 export default class ReflectionsMainPage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            reflections: this.props.reflections
-        }
-    }
-
     render() {
         return (
             <>
@@ -26,7 +19,7 @@ export default class ReflectionsMainPage extends React.Component {
                             <header className='mj-page-content-header'>
                                 <h1>Your Reflections</h1>
                                 <p className='description'>Capture your ideas, feelings and thoughts</p>
-                                <ReflectionsList reflections={this.state.reflections} />
+                                <ReflectionsList reflections={this.props.reflections} />
                             </header>
                         </div>
                     </div>
