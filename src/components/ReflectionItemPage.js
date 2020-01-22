@@ -19,7 +19,7 @@ export default function ReflectionItemPage(props) {
                     </div>
                 </div>
             </div>
-            <ReflectionItemPageFooter history={props.history} />
+            <ReflectionItemPageFooter history={props.history} deleteReflection={props.deleteReflection} id={reflection.id} />
         </main>
         </>
     )

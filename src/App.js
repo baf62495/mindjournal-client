@@ -37,11 +37,18 @@ class App extends React.Component {
   deleteLog = (e, id) => {
     e.preventDefault()
     
-    let logs = this.props.logs.filter(log => log.id !== id)
-    console.log('DELETE', logs)
+    let logs = this.state.logs.filter(log => log.id !== id)
+    console.log('log deleted', logs)
     this.setState({ logs })
   }
 
+  deleteReflection = (e, id) => {
+    e.preventDefault()
+    
+    let reflections = this.state.reflections.filter(r => r.id !== id)
+    console.log('reflection deleted', reflections)
+    this.setState({ reflections })
+  }
 
   render() {
     return (
@@ -67,7 +74,7 @@ class App extends React.Component {
       <Route
         exact path='/reflections/:id'
         render={rprops => (
-          <ReflectionItemPage {...rprops} reflections={this.state.reflections} />
+          <ReflectionItemPage {...rprops} reflections={this.state.reflections} deleteReflection={this.deleteReflection} />
         )}
       />
       </>
