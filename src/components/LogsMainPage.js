@@ -21,7 +21,7 @@ export default class LogsMainPage extends React.Component {
                                 <h1>Your Logs</h1>
                                 <p className='description'>Capture your ideas, feelings and thoughts</p>
                             </header>
-                            <LogsForm createLog={this.createLog} />
+                            <LogsForm createLog={this.props.createLog} />
                             <LogsList logs={this.props.logs} deleteLog={this.props.deleteLog} />
                         </div>
                     </div>
