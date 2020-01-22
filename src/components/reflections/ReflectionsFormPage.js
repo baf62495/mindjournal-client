@@ -10,7 +10,7 @@ export default function ReflectionItemPage(props) {
             <div className='mj-page'>
                 <div className='mj-page-content'>
                     <div className='wrapper'>
-                        <form onSubmit={e => props.createReflection(e)}>
+                        <form onSubmit={e => {props.createReflection(e); props.history.push("/reflections")}}>
                             <label htmlFor='title'>
                                 <input type='text' name='title' id='title' placeholder='Title'></input>
                             </label>

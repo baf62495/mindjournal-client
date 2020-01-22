@@ -20,7 +20,7 @@ class App extends React.Component {
 
   createLog = e => {
     e.preventDefault()
-    console.log('LogForm submitted!')
+    console.log('Log created')
 
     let newLog = {
       content: e.target.content.value,
@@ -38,6 +38,7 @@ class App extends React.Component {
   
   createReflection = e => {
     e.preventDefault()
+    console.log('Reflection created')
 
     const newReflection = {
       id: uuid(),
@@ -52,7 +53,6 @@ class App extends React.Component {
         newReflection
       ]
     })
-    console.log(newReflection)
   }
 
   deleteLog = (e, id) => {

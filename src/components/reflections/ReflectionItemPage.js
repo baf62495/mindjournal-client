@@ -4,7 +4,7 @@ import ReflectionItemPageFooter from './ReflectionItemPageFooter';
 
 export default function ReflectionItemPage(props) {
     const reflection = props.reflections.find(r =>
-        r.id === parseInt(props.match.params.id)
+        parseInt(r.id) === parseInt(props.match.params.id)
     )
 
     return (
