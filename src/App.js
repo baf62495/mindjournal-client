@@ -15,7 +15,8 @@ class App extends React.Component {
     this.state = {
         logs: this.props.logs,
         reflections: this.props.reflections,
-        searchTerm: ''
+        searchTerm: '',
+        filterOptions: 'All'
     }
   }
 
@@ -79,6 +80,13 @@ class App extends React.Component {
     })
   }
 
+  updateFilterOptions = option => {
+    console.log('filtering by:', option)
+    this.setState({
+      filterOptions: option
+    })
+  }
+
   render() {
     return (
       <>
@@ -92,7 +100,9 @@ class App extends React.Component {
             createLog={this.createLog}
             deleteLog={this.deleteLog}
             searchTerm={this.state.searchTerm}
+            filterOptions={this.state.filterOptions}
             updateSearchTerm={this.updateSearchTerm}
+            updateFilterOptions={this.updateFilterOptions}
           />
         )}
       />
