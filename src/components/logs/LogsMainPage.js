@@ -10,7 +10,7 @@ export default class LogsMainPage extends React.Component {
     render() {
         return (
             <>
-            <AppNavigation />
+            <AppNavigation navigationActive={this.props.navigationActive} />
             <main>
                 <AppSidebar
                     searchTerm={this.props.searchTerm}
@@ -19,7 +19,7 @@ export default class LogsMainPage extends React.Component {
                     updateFilterOptions={this.props.updateFilterOptions}
                     onLogs={true}
                 />
-                <AppHeader title='Logs' />
+                <AppHeader title='Logs' toggleActive={this.props.toggleActive} />
                 <div className='mj-page'>
                     <div className='mj-page-content'>
                         <div className='wrapper'>

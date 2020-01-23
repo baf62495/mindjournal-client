@@ -16,7 +16,8 @@ class App extends React.Component {
         logs: this.props.logs,
         reflections: this.props.reflections,
         searchTerm: '',
-        filterOptions: 'All'
+        filterOptions: 'All',
+        navigationActive: true
     }
   }
 
@@ -87,6 +88,12 @@ class App extends React.Component {
     })
   }
 
+  toggleActive = () => {
+    this.setState({
+      navigationActive: !this.state.navigationActive
+    })
+  }
+
   render() {
     return (
       <>
@@ -101,8 +108,10 @@ class App extends React.Component {
             deleteLog={this.deleteLog}
             searchTerm={this.state.searchTerm}
             filterOptions={this.state.filterOptions}
+            navigationActive={this.state.navigationActive}
             updateSearchTerm={this.updateSearchTerm}
             updateFilterOptions={this.updateFilterOptions}
+            toggleActive={this.toggleActive}
           />
         )}
       />
