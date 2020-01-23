@@ -92,7 +92,6 @@ class App extends React.Component {
     this.setState({
       isNavCollapsed: !this.state.isNavCollapsed
     })
-    console.log(this.state.isNavCollapsed)
   }
 
   render() {
@@ -123,7 +122,9 @@ class App extends React.Component {
             {...rprops}
             reflections={this.state.reflections}
             searchTerm={this.state.searchTerm}
+            isNavCollapsed={this.state.isNavCollapsed}
             updateSearchTerm={this.updateSearchTerm}
+            toggleNav={this.toggleNav}
           />
         )}
       />

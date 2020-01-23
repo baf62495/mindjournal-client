@@ -9,10 +9,10 @@ export default class ReflectionsMainPage extends React.Component {
     render() {
         return (
             <>
-            <AppNavigation />
+            <AppNavigation isNavCollapsed={this.props.isNavCollapsed} />
             <main>
                 <AppSidebar searchTerm={this.props.searchTerm} updateSearchTerm={this.props.updateSearchTerm} />
-                <AppHeader title='Reflections' />
+                <AppHeader title='Reflections' toggleNav={this.props.toggleNav} />
                 <div className='mj-page'>
                     <div className='mj-page-content'>
                         <div className="wrapper">
