@@ -12,7 +12,7 @@ export default function AppSidebar(props) {
         )
     }
     return (
-        <aside className='app-sidebar'>
+        <aside className={props.isSidebarVisible ? 'app-sidebar' : 'app-sidebar is-invisible'}>
             <SearchInput updateSearchTerm={props.updateSearchTerm} />
         </aside>
     )
