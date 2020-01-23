@@ -17,7 +17,7 @@ class App extends React.Component {
         reflections: this.props.reflections,
         searchTerm: '',
         filterOptions: 'All',
-        navigationActive: true
+        isNavCollapsed: false
     }
   }
 
@@ -88,10 +88,11 @@ class App extends React.Component {
     })
   }
 
-  toggleActive = () => {
+  toggleNav = () => {
     this.setState({
-      navigationActive: !this.state.navigationActive
+      isNavCollapsed: !this.state.isNavCollapsed
     })
+    console.log(this.state.isNavCollapsed)
   }
 
   render() {
@@ -108,10 +109,10 @@ class App extends React.Component {
             deleteLog={this.deleteLog}
             searchTerm={this.state.searchTerm}
             filterOptions={this.state.filterOptions}
-            navigationActive={this.state.navigationActive}
+            isNavCollapsed={this.state.isNavCollapsed}
             updateSearchTerm={this.updateSearchTerm}
             updateFilterOptions={this.updateFilterOptions}
-            toggleActive={this.toggleActive}
+            toggleNav={this.toggleNav}
           />
         )}
       />

@@ -10,16 +10,16 @@ export default class LogsMainPage extends React.Component {
     render() {
         return (
             <>
-            <AppNavigation navigationActive={this.props.navigationActive} />
+            <AppNavigation isNavCollapsed={this.props.isNavCollapsed} />
             <main>
                 <AppSidebar
                     searchTerm={this.props.searchTerm}
                     filterOptions={this.props.filterOptions}
                     updateSearchTerm={this.props.updateSearchTerm}
                     updateFilterOptions={this.props.updateFilterOptions}
-                    onLogs={true}
+                    isOnLogs={true}
                 />
-                <AppHeader title='Logs' toggleActive={this.props.toggleActive} />
+                <AppHeader title='Logs' toggleNav={this.props.toggleNav} />
                 <div className='mj-page'>
                     <div className='mj-page-content'>
                         <div className='wrapper'>

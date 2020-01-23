@@ -3,7 +3,7 @@ import SearchInput from './SearchInput';
 import FilterOptions from './FilterOptions';
 
 export default function AppSidebar(props) {
-    if (props.onLogs) {
+    if (props.isOnLogs) {
         return (
             <aside className='app-sidebar'>
                 <SearchInput updateSearchTerm={props.updateSearchTerm} />

@@ -9,7 +9,7 @@ export default function AppHeader(props) {
     return (
         <header className='app-header'>
             <div className='header-left'>
-                <button className='js-btn-menu' onClick={() => props.toggleActive()}><FontAwesomeIcon icon={faBars}/></button>
+                <button className='js-btn-menu' onClick={() => props.toggleNav()}><FontAwesomeIcon icon={faBars}/></button>
             </div>
             <div className='header-center'>{props.title}</div>
             <div className='header-right'>
