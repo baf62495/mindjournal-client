@@ -5,7 +5,7 @@ import FilterOptions from './FilterOptions';
 export default function AppSidebar(props) {
     if (props.isOnLogs) {
         return (
-            <aside className='app-sidebar'>
+            <aside className={props.isSidebarVisible ? 'app-sidebar' : 'app-sidebar is-invisible'}>
                 <SearchInput updateSearchTerm={props.updateSearchTerm} />
                 <FilterOptions updateFilterOptions={props.updateFilterOptions} filterOptions={props.filterOptions} />
             </aside>

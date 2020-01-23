@@ -17,7 +17,8 @@ class App extends React.Component {
         reflections: this.props.reflections,
         searchTerm: '',
         filterOptions: 'All',
-        isNavCollapsed: false
+        isNavCollapsed: false,
+        isSidebarVisible: false
     }
   }
 
@@ -94,6 +95,12 @@ class App extends React.Component {
     })
   }
 
+  toggleSidebar = () => {
+    this.setState({
+      isSidebarVisible: !this.state.isSidebarVisible
+    })
+  }
+
   render() {
     return (
       <>
@@ -109,9 +116,11 @@ class App extends React.Component {
             searchTerm={this.state.searchTerm}
             filterOptions={this.state.filterOptions}
             isNavCollapsed={this.state.isNavCollapsed}
+            isSidebarVisible={this.state.isSidebarVisible}
             updateSearchTerm={this.updateSearchTerm}
             updateFilterOptions={this.updateFilterOptions}
             toggleNav={this.toggleNav}
+            toggleSidebar={this.toggleSidebar}
           />
         )}
       />
@@ -123,8 +132,10 @@ class App extends React.Component {
             reflections={this.state.reflections}
             searchTerm={this.state.searchTerm}
             isNavCollapsed={this.state.isNavCollapsed}
+            isSidebarVisible={this.state.isSidebarVisible}
             updateSearchTerm={this.updateSearchTerm}
             toggleNav={this.toggleNav}
+            toggleSidebar={this.toggleSidebar}
           />
         )}
       />

@@ -13,7 +13,7 @@ export default function AppHeader(props) {
             </div>
             <div className='header-center'>{props.title}</div>
             <div className='header-right'>
-                <button className='js-btn-filter'><FontAwesomeIcon icon={faFilter}/></button>
+                <button className='js-btn-filter' onClick={() => props.toggleSidebar()}><FontAwesomeIcon icon={faFilter}/></button>
             </div>
         </header>
     )
