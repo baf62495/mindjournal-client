@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
 import uuid from 'react-uuid';
+import config from './config';
 
 import LandingPage from './components/LandingPage';
 import LogsMainPage from './components/logs/LogsMainPage';
@@ -13,13 +14,47 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        logs: this.props.logs,
-        reflections: this.props.reflections,
+        logs: [],
+        reflections: [],
         searchTerm: '',
         filterOptions: 'All',
         isNavCollapsed: false,
         isSidebarVisible: false
     }
+  }
+
+  componentDidMount() {
+    Promise.all([
+      fetch(`${config.API_BASE_URL}/logs`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${config.API_KEY}`
+        }
+      }),
+      fetch(`${config.API_BASE_URL}/reflections`, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${config.API_KEY}`
+        }
+      })
+    ])
+      .then(([logsRes, reflectionsRes]) => {
+        if (!logsRes.ok)
+          return logsRes.json().then(e => Promise.reject(e))
+        if (!reflectionsRes.ok)
+          return reflectionsRes.json().then(e => Promise.reject(e))
+        return Promise.all([
+          logsRes.json(),
+          reflectionsRes.json()
+        ])
+      })
+      .then(([logs, reflections]) => {
+        this.setState({ logs, reflections })
+      })
+      .catch(error => {
+        console.error({ error })
+      })
   }
 
   createLog = e => {
