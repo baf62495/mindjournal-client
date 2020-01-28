@@ -60,7 +60,6 @@ class App extends React.Component {
 
   createLog = e => {
     e.preventDefault()
-    console.log('Log created')
 
     let newLog = {
       content: e.target.content.value,
@@ -95,7 +94,6 @@ class App extends React.Component {
   
   createReflection = e => {
     e.preventDefault()
-    console.log('Reflection created')
 
     const newReflection = {
       id: uuid(),
@@ -133,7 +131,6 @@ class App extends React.Component {
     e.preventDefault()
 
     let logs = this.state.logs.filter(log => log.id !== id)
-    console.log('log deleted', logs)
 
     fetch(`${config.API_BASE_URL}/logs/${id}`, {
       method: 'DELETE',
@@ -157,7 +154,6 @@ class App extends React.Component {
     e.preventDefault()
     
     let reflections = this.state.reflections.filter(r => r.id !== id)
-    console.log('reflection deleted', reflections)
     
     fetch(`${config.API_BASE_URL}/reflections/${id}`, {
       method: 'DELETE',
@@ -178,14 +174,12 @@ class App extends React.Component {
   }
 
   updateSearchTerm = term => {
-    console.log('searching for:', term)
     this.setState({
       searchTerm: term
     })
   }
 
   updateFilterOptions = option => {
-    console.log('filtering by:', option)
     this.setState({
       filterOptions: option
     })
