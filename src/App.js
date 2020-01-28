@@ -33,6 +33,7 @@ class App extends React.Component {
         }
       }),
       fetch(`${config.API_BASE_URL}/reflections`, {
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${config.API_KEY}`
@@ -64,15 +65,32 @@ class App extends React.Component {
     let newLog = {
       content: e.target.content.value,
       mood: e.target.mood.value,
-      created_at: new Date().toISOString()
+      created_at: new Date(),
+      user_id: 1
     }
 
-    this.setState({
-      logs: [
-          ...this.state.logs,
-          newLog
-      ]
+    fetch(`${config.API_BASE_URL}/logs`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${config.API_KEY}`
+      },
+      body: JSON.stringify(newLog)
     })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(e => Promise.reject(e))
+        }
+        return res.json()
+      })
+      .then(log => {
+        this.setState({
+          logs: [
+            ...this.state.logs,
+            log
+          ]
+        })
+      })
   }
   
   createReflection = e => {
@@ -83,23 +101,56 @@ class App extends React.Component {
       id: uuid(),
       title: e.target.title.value,
       content: e.target.content.value,
-      last_edited: new Date().toISOString()
+      last_edited: new Date(),
+      user_id: 1
     }
 
-    this.setState({
-      reflections: [
-        ...this.state.reflections,
-        newReflection
-      ]
+    fetch(`${config.API_BASE_URL}/reflections`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${config.API_KEY}`
+      },
+      body: JSON.stringify(newReflection)
     })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(e => Promise.reject(e))
+        }
+        return res.json()
+      })
+      .then(reflection => {
+        this.setState({
+          reflections: [
+            ...this.state.reflections,
+            reflection
+          ]
+        })
+      })
   }
 
   deleteLog = (e, id) => {
     e.preventDefault()
-    
+
     let logs = this.state.logs.filter(log => log.id !== id)
     console.log('log deleted', logs)
-    this.setState({ logs })
+
+    fetch(`${config.API_BASE_URL}/logs/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${config.API_KEY}`
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(e => Promise.reject(e))
+        }
+        return res
+      })
+      .then(() => {
+        this.setState({ logs })
+      })
   }
 
   deleteReflection = (e, id) => {
@@ -107,7 +158,23 @@ class App extends React.Component {
     
     let reflections = this.state.reflections.filter(r => r.id !== id)
     console.log('reflection deleted', reflections)
-    this.setState({ reflections })
+    
+    fetch(`${config.API_BASE_URL}/reflections/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${config.API_KEY}`
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(e => Promise.reject(e))
+        }
+        return res
+      })
+      .then(() => {
+        this.setState({ reflections })
+      })
   }
 
   updateSearchTerm = term => {
