@@ -293,7 +293,8 @@ button {
 
 .mj-card-form button,
 .mj-page-content-header button,
-.mj-refl-form button {
+.mj-refl-form button,
+.landing-hero button {
     color: #fff;
     padding: 10px 24px;
     text-decoration: none;
@@ -307,7 +308,8 @@ button {
 }
 
 .mj-card-form button:hover,
-.mj-page-content-header button:hover {
+.mj-page-content-header button:hover,
+.landing-hero button:hover {
     background-color: #55c8c6;
 }
 
@@ -488,4 +490,33 @@ button {
 
 .fa-tired {
     color: #e61313!important;
+}
+
+.landing-page .landing-hero {
+    max-width: 1040px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 10% 40px 0 40px;
+    color: #191c1d;
+}
+
+.landing-hero > h1 {
+    font-family: 'PT Serif', serif;
+    font-size: 82px;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.landing-page header .main-logo {
+    padding: 0 16px;
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #191c1d;
+}
+
+.landing-hero >.size-l {
+    font-size: 26px;
+    margin: 20px 0;
 }
