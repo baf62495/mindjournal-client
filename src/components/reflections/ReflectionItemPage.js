@@ -13,9 +13,13 @@ export default function ReflectionItemPage(props) {
             <ReflectionItemPageHeader history={props.history} />
             <div className='mj-page'>
                 <div className='mj-page-content'>
-                    <div className='wrapper'>
-                        <h1>{reflection.title}</h1>
-                        <p>{reflection.content}</p>
+                    <div className='mj-refl-item'>
+                        <div className='wrapper'>
+                            <div className='mj-refl-form-header'>
+                                <h1>{reflection.title}</h1>
+                            </div>
+                            <p>{reflection.content}</p>
+                        </div>
                     </div>
                 </div>
             </div>

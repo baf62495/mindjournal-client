@@ -25,8 +25,10 @@ export default class LogsMainPage extends React.Component {
                     <div className='mj-page-content'>
                         <div className='wrapper'>
                             <header className='mj-page-content-header'>
-                                <h1>Your Logs</h1>
-                                <p className='description'>Capture your ideas, feelings and thoughts</p>
+                                <div>
+                                    <h1>Your Logs</h1>
+                                    <p className='description'>Capture your ideas, feelings and thoughts</p>
+                                </div>
                             </header>
                             <LogsForm createLog={this.props.createLog} />
                             <LogsList

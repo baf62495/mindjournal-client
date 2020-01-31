@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 export default function ReflectionItemPageFooter(props) {
     return (
@@ -11,7 +13,7 @@ export default function ReflectionItemPageFooter(props) {
                             {props.deleteReflection(e, props.id);
                             props.history.push("/reflections");
                         }}>
-                        Delete
+                        <FontAwesomeIcon icon={faTrash} />
                     </button>
                 </div>
             </div>

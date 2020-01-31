@@ -3,14 +3,20 @@ import ReflectionsListItem from './ReflectionsListItem';
 
 export default class LogsList extends React.Component {
     render() {
-        const { searchTerm } = this.props
+        const { searchTerm, reflections } = this.props
         const list = this.props.reflections
             .filter(reflection => reflection.title.toLowerCase().includes(searchTerm.toLowerCase()))
             .map((reflection, key) => <ReflectionsListItem {...reflection} key={key} />);
-        if (list.length === 0) {
+        if (reflections.length === 0) {
             return (
                 <div className='mj-refl-list'>
-                    <p><i>Sorry, there are no logs matching this criteria.</i></p>
+                    <p><i>Create your first reflection...</i></p>
+                </div>
+            )
+        } else if (reflections.length > 0 && list.length === 0) {
+            return (
+                <div className='mj-refl-list'>
+                    <p><i>Sorry, there are no reflections that match the criteria</i></p>
                 </div>
             )
         }

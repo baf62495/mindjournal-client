@@ -6,8 +6,10 @@ import {
     faMeh,
     faFrown,
     faTired,
-    faEllipsisH
+    faTrash
 } from '@fortawesome/free-solid-svg-icons';
+
+import { format } from 'date-fns';
 
 export default function LogItem(props) {
     const icons = {
@@ -22,12 +24,12 @@ export default function LogItem(props) {
             <header>
                 <ul className='mj-card-meta'>
                     <li><FontAwesomeIcon icon={icons[props.mood]} /></li>
-                    <li>{props.created_at}</li>
                     <li>{props.mood}</li>
+                    <li>{format(new Date(props.created_at), 'iii d LLL yy')}</li>
                 </ul>
             </header>
             <p>{props.content}</p>
-            <button title='delete' onClick={e => props.deleteLog(e, props.id)}>Delete</button>
+            <button title='delete' onClick={e => props.deleteLog(e, props.id)}><FontAwesomeIcon icon={faTrash} /></button>
         </div>
     )
 }
