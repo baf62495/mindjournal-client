@@ -216,3 +216,78 @@ describe('ReflectionItemPageHeader component', () => {
 		ReactDOM.unmountComponentAtNode(div)
 	})
 })
+
+describe('AppHeader component', () => {
+	it('renders without crashing', () => {
+		const div = document.createElement('div')
+		ReactDOM.render(
+            <BrowserRouter>
+                <App>
+                    <AppHeader />
+                </App>
+            </BrowserRouter>,
+            div
+        )
+		ReactDOM.unmountComponentAtNode(div)
+	})
+})
+
+describe('AppNavigation component', () => {
+	it('renders without crashing', () => {
+		const div = document.createElement('div')
+		ReactDOM.render(
+            <BrowserRouter>
+                <App>
+                    <AppNavigation />
+                </App>
+            </BrowserRouter>,
+            div
+        )
+		ReactDOM.unmountComponentAtNode(div)
+	})
+})
+
+describe('AppSidebar component', () => {
+	it('renders without crashing', () => {
+		const div = document.createElement('div')
+		ReactDOM.render(
+            <BrowserRouter>
+                <App>
+                    <AppSidebar />
+                </App>
+            </BrowserRouter>,
+            div
+        )
+		ReactDOM.unmountComponentAtNode(div)
+	})
+})
+
+describe('FilterOptions component', () => {
+	it('renders without crashing', () => {
+		const div = document.createElement('div')
+		ReactDOM.render(
+            <BrowserRouter>
+                <App>
+                    <FilterOptions />
+                </App>
+            </BrowserRouter>,
+            div
+        )
+		ReactDOM.unmountComponentAtNode(div)
+	})
+})
+
+describe('SearchInput component', () => {
+	it('renders without crashing', () => {
+		const div = document.createElement('div')
+		ReactDOM.render(
+            <BrowserRouter>
+                <App>
+                    <SearchInput />
+                </App>
+            </BrowserRouter>,
+            div
+        )
+		ReactDOM.unmountComponentAtNode(div)
+	})
+})
