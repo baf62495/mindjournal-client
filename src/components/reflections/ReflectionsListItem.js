@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { format } from 'date-fns';
 
 export default function ReflectionListItem(props) {
     return (
@@ -8,7 +9,7 @@ export default function ReflectionListItem(props) {
             <p>
                 {`${props.content.substring(0, 160)}...`}
             </p>
-            <p className='last-edited'>Last Edited: {props.last_edited}</p>
+            <p className='last-edited'>Last Edited: {format(new Date(props.last_edited), 'iii d LLL yyyy')}</p>
         </div>
     )
 }

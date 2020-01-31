@@ -25,7 +25,7 @@ export default function LogItem(props) {
                 <ul className='mj-card-meta'>
                     <li><FontAwesomeIcon icon={icons[props.mood]} /></li>
                     <li>{props.mood}</li>
-                    <li>{format(new Date(props.created_at), 'iii d LLL yy')}</li>
+                    <li>{format(new Date(props.created_at), 'iii d LLL yyyy')}</li>
                 </ul>
             </header>
             <p>{props.content}</p>
