@@ -150,7 +150,7 @@ class App extends React.Component {
       })
   }
 
-  deleteReflection = (e, id) => {
+  deleteReflection = (e, id, history) => {
     e.preventDefault()
     
     let reflections = this.state.reflections.filter(r => r.id !== id)
@@ -169,6 +169,7 @@ class App extends React.Component {
         return res
       })
       .then(() => {
+        history.push('/reflections')
         this.setState({ reflections })
       })
   }
@@ -198,6 +199,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.isSidebarVisible)
     return (
       <>
       <Route exact path='/' component={LandingPage}/>

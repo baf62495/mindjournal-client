@@ -10,9 +10,7 @@ export default function ReflectionItemPageFooter(props) {
                     <button
                         title='delete'
                         onClick={e =>
-                            {props.deleteReflection(e, props.id);
-                            props.history.push("/reflections");
-                        }}>
+                            {props.deleteReflection(e, props.id, props.history)}}>
                         <FontAwesomeIcon icon={faTrash} />
                     </button>
                 </div>

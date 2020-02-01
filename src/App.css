@@ -520,3 +520,29 @@ button {
     font-size: 26px;
     margin: 20px 0;
 }
+
+@media screen and (max-width: 960px) {
+    .landing-page .landing-hero {
+        padding-top: 20%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .landing-page .landing-hero {
+        padding: 30% 20px 0 20px;
+    }
+    
+    .landing-hero > h1 {
+        font-size: 38px;
+    }
+
+    .landing-hero >.size-l {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mj-page-content {
+        padding: 40px 20px;
+    }
+}

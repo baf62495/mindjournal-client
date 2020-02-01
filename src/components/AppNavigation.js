@@ -8,7 +8,7 @@ import {
 
 export default function AppNavigation(props) {
     return (
-        <nav role='navigation' aria-label='Main Navigation' className={props.isNavCollapsed ? 'app-navigation': 'app-navigation is-collapsed'}>
+        <nav role='navigation' aria-label='Main Navigation' className={props.isNavCollapsed ? 'app-navigation' : 'app-navigation is-collapsed'}>
             <header className='navigation-header'>
                 <Link to='/'>MindJournal</Link>
             </header>
