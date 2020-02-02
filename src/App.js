@@ -199,7 +199,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.isSidebarVisible)
     return (
       <>
       <Route exact path='/' component={LandingPage}/>

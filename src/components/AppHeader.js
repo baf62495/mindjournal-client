@@ -15,10 +15,8 @@ export default function AppHeader(props) {
                         if (props.isSidebarVisible && window.matchMedia('(max-width: 960px)').matches) {
                             props.toggleSidebar()
                             props.toggleNav()
-                            console.log('toggle both')
                         } else {
                             props.toggleNav()
-                            console.log('toggle nav')
                         }
                         }}>
                     <FontAwesomeIcon icon={faBars}/>
@@ -32,10 +30,8 @@ export default function AppHeader(props) {
                         if (props.isNavCollapsed && window.matchMedia('(max-width: 960px)').matches) {
                             props.toggleSidebar()
                             props.toggleNav()
-                            console.log('toggle both')
                         } else {
                             props.toggleSidebar()
-                            console.log('toggle nav')
                         }
                     }}>
                     <FontAwesomeIcon icon={faFilter}/>
